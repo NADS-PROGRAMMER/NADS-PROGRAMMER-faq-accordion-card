@@ -1,0 +1,196 @@
+@import "./globals";
+
+body {
+  padding: 2rem;
+  user-select: none;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //   background: red;
+}
+
+.designs {
+  display: none;
+}
+
+.box {
+  display: none;
+}
+.mobile-art {
+  position: absolute;
+  top: -100px;
+  max-width: 20rem;
+  width: 100%;
+  filter: drop-shadow(0px 30px 2px $lightGrayishBlue);
+}
+
+.main--content {
+  background: white;
+  padding-top: 11rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 4rem;
+  border-radius: 25px;
+  max-width: 372px;
+  width: 100%;
+}
+
+.contents {
+  @include displayFlex(column, none, center);
+  gap: 1.5rem;
+  //   padding: 0 1.14rem;
+}
+
+h1 {
+  color: $veryDarkSaturatedBlue;
+  font-size: 2.5rem;
+}
+
+.content {
+  @include displayFlex(column, none, stretch);
+  padding: 0 2rem;
+  gap: 1rem;
+  position: relative;
+  width: 100%;
+  label {
+    @include displayFlex(row, space-between, center);
+    gap: 2.5rem;
+    color: $veryDarkGrayishBlue;
+    font-weight: 400;
+    font-size: 1.1rem;
+  }
+
+  .answer {
+    display: none;
+    max-width: 38ch;
+
+    transition: all 300ms ease-in;
+    span {
+      line-height: 1.5rem;
+      color: $darkGrayishBlue;
+    }
+  }
+}
+
+.content::after {
+  content: " ";
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: -2px;
+  height: 0.1rem;
+  background: $lightGrayishBlue;
+}
+
+input[type="checkbox"] {
+  visibility: collapse;
+}
+
+input[type="checkbox"]:checked ~ label {
+  color: $veryDarkSaturatedBlue;
+  font-weight: 700;
+}
+
+input[type="checkbox"]:checked ~ label img {
+  transform: rotate(180deg);
+  transition: transform 300ms ease-in-out;
+}
+
+input[type="checkbox"]:not(:checked) ~ label img {
+  transition: transform 300ms ease-in-out;
+}
+
+input[type="checkbox"]:checked ~ .answer {
+  display: block;
+}
+
+@media only screen and (min-width: 1440px) {
+  .mobile-art {
+    display: none;
+  }
+  body {
+    padding: 8em 130px;
+  }
+
+  .main-container {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  main {
+    @include displayFlex(row, none, center);
+    border-radius: 20px;
+    background: white;
+    padding: 4rem 10rem;
+
+    width: 923px;
+    min-height: 509px;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+    clip-path: fill-box;
+    overflow-clip-margin: 30px;
+  }
+
+  .designs {
+    display: block;
+    position: relative;
+  }
+  .pattern-desktop {
+    position: absolute;
+    width: 200%;
+    left: -126%;
+    top: -100%;
+  }
+  .mobile-art-desktop {
+    position: relative;
+    left: -28%;
+    z-index: 1;
+  }
+  .box {
+    display: block;
+    position: absolute;
+    left: -93px;
+    top: 207px;
+    z-index: 2;
+  }
+  .main--content {
+    padding: 2rem 0;
+    width: 352px;
+    padding-right: 94px;
+    min-height: 352px;
+
+    .contents {
+      padding-left: 2rem;
+      label {
+        padding-right: 1rem;
+      }
+      width: 32em;
+      h1 {
+        align-self: flex-start;
+      }
+      .content {
+        width: 352px;
+        padding: 0;
+
+        .answer {
+          max-width: 50ch;
+        }
+      }
+
+      .content::after {
+        left: 0;
+        right: 0rem;
+      }
+    }
+  }
+}

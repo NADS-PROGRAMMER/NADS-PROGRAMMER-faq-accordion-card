@@ -71,8 +71,11 @@ main {
   top: -100px;
   max-width: 20rem;
   width: 100%;
-  -webkit-filter: drop-shadow(0px 30px 2px #e7e7e9);
-          filter: drop-shadow(0px 30px 2px #e7e7e9);
+}
+
+.mobile-pattern {
+  position: absolute;
+  top: 10px;
 }
 
 .main--content {
@@ -207,9 +210,61 @@ input[type="checkbox"]:checked ~ .answer {
   display: block;
 }
 
+label:hover {
+  color: #f47c57;
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 1440px) {
+  @-webkit-keyframes animateBox {
+    from {
+      top: 41%;
+    }
+    to {
+      top: 45%;
+      -webkit-transform: translateX(-10%);
+              transform: translateX(-10%);
+    }
+  }
+  @keyframes animateBox {
+    from {
+      top: 41%;
+    }
+    to {
+      top: 45%;
+      -webkit-transform: translateX(-10%);
+              transform: translateX(-10%);
+    }
+  }
+  @-webkit-keyframes animateArt {
+    from {
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+    }
+    to {
+      -webkit-transform: translateX(10%);
+              transform: translateX(10%);
+      -webkit-transform: translateZ(-10%);
+              transform: translateZ(-10%);
+    }
+  }
+  @keyframes animateArt {
+    from {
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+    }
+    to {
+      -webkit-transform: translateX(10%);
+              transform: translateX(10%);
+      -webkit-transform: translateZ(-10%);
+              transform: translateZ(-10%);
+    }
+  }
   .mobile-art {
     display: none;
+  }
+  .mobile-pattern {
+    visibility: hidden;
   }
   body {
     padding: 8em 130px;
@@ -263,16 +318,20 @@ input[type="checkbox"]:checked ~ .answer {
     position: relative;
     left: -28%;
     z-index: 1;
+    -webkit-animation: animateArt 1500ms infinite alternate;
+            animation: animateArt 1500ms infinite alternate;
   }
   .box {
     display: block;
     position: absolute;
     left: -93px;
-    top: 207px;
+    top: 41%;
     z-index: 2;
+    -webkit-animation: animateBox 1500ms infinite alternate;
+            animation: animateBox 1500ms infinite alternate;
   }
   .main--content {
-    padding: 2rem 0;
+    padding: 3rem 0;
     width: 352px;
     padding-right: 94px;
     min-height: 352px;
@@ -282,11 +341,13 @@ input[type="checkbox"]:checked ~ .answer {
     width: 32em;
   }
   .main--content .contents label {
+    font-size: 1.2rem;
     padding-right: 1rem;
   }
   .main--content .contents h1 {
     -ms-flex-item-align: start;
         align-self: flex-start;
+    padding-bottom: 1rem;
   }
   .main--content .contents .content {
     width: 352px;

@@ -318,8 +318,6 @@ label:hover {
     position: relative;
     left: -28%;
     z-index: 1;
-    -webkit-animation: animateArt 1500ms infinite alternate;
-            animation: animateArt 1500ms infinite alternate;
   }
   .box {
     display: block;
@@ -327,8 +325,6 @@ label:hover {
     left: -93px;
     top: 41%;
     z-index: 2;
-    -webkit-animation: animateBox 1500ms infinite alternate;
-            animation: animateBox 1500ms infinite alternate;
   }
   .main--content {
     padding: 3rem 0;

@@ -188,7 +188,6 @@ label:hover {
     position: relative;
     left: -28%;
     z-index: 1;
-    animation: animateArt 1500ms infinite alternate;
   }
   .box {
     display: block;
@@ -197,7 +196,6 @@ label:hover {
     // top: 207px;
     top: 41%;
     z-index: 2;
-    animation: animateBox 1500ms infinite alternate;
   }
   .main--content {
     padding: 3rem 0;

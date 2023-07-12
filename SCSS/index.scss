@@ -1,8 +1,10 @@
 @import "./globals";
 
+
 body {
   padding: 2rem;
   user-select: none;
+  height: 100vh;
 }
 
 main {
@@ -21,6 +23,7 @@ main {
 .box {
   display: none;
 }
+
 .mobile-art {
   position: absolute;
   top: -100px;
@@ -33,6 +36,7 @@ main {
   position: absolute;
   top: 10px;
 }
+
 .main--content {
   background: white;
   padding-top: 11rem;
@@ -62,6 +66,7 @@ h1 {
   gap: 1rem;
   position: relative;
   width: 100%;
+
   label {
     @include displayFlex(row, space-between, center);
     gap: 2.5rem;
@@ -75,6 +80,7 @@ h1 {
     max-width: 38ch;
 
     transition: all 300ms ease-in;
+
     span {
       line-height: 1.5rem;
       color: $darkGrayishBlue;
@@ -96,21 +102,21 @@ input[type="checkbox"] {
   visibility: collapse;
 }
 
-input[type="checkbox"]:checked ~ label {
+input[type="checkbox"]:checked~label {
   color: $veryDarkSaturatedBlue;
   font-weight: 700;
 }
 
-input[type="checkbox"]:checked ~ label img {
+input[type="checkbox"]:checked~label img {
   transform: rotate(180deg);
   transition: transform 300ms ease-in-out;
 }
 
-input[type="checkbox"]:not(:checked) ~ label img {
+input[type="checkbox"]:not(:checked)~label img {
   transition: transform 300ms ease-in-out;
 }
 
-input[type="checkbox"]:checked ~ .answer {
+input[type="checkbox"]:checked~.answer {
   display: block;
 }
 
@@ -118,11 +124,13 @@ label:hover {
   color: $softRed;
   cursor: pointer;
 }
-@media only screen and (min-width: 1440px) {
+
+@media only screen and (min-width: 1366px) {
   @keyframes animateBox {
     from {
       top: 41%;
     }
+
     to {
       top: 45%;
       transform: translateX(-10%);
@@ -134,12 +142,14 @@ label:hover {
       //   left: -28%;
       transform: translateX(0%);
     }
+
     to {
       transform: translateX(10%);
       transform: translateZ(-10%);
       //   left: -40%;
     }
   }
+
   .mobile-art {
     display: none;
   }
@@ -147,8 +157,9 @@ label:hover {
   .mobile-pattern {
     visibility: hidden;
   }
+
   body {
-    padding: 8em 130px;
+    // height: 100vh;
   }
 
   .main-container {
@@ -178,17 +189,20 @@ label:hover {
     display: block;
     position: relative;
   }
+
   .pattern-desktop {
     position: absolute;
     width: 200%;
     left: -126%;
     top: -100%;
   }
+
   .mobile-art-desktop {
     position: relative;
     left: -28%;
     z-index: 1;
   }
+
   .box {
     display: block;
     position: absolute;
@@ -197,6 +211,7 @@ label:hover {
     top: 41%;
     z-index: 2;
   }
+
   .main--content {
     padding: 3rem 0;
     width: 352px;
@@ -205,15 +220,19 @@ label:hover {
 
     .contents {
       padding-left: 2rem;
+
       label {
         font-size: 1.2rem;
         padding-right: 1rem;
       }
+
       width: 32em;
+
       h1 {
         align-self: flex-start;
         padding-bottom: 1rem;
       }
+
       .content {
         width: 352px;
         padding: 0;

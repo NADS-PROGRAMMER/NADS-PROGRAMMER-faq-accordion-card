@@ -2,10 +2,8 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Kumbh Sans", sans-serif;
-  -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
@@ -14,48 +12,25 @@ html {
 }
 
 body {
-  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
-  background: linear-gradient(to bottom, #af67e9, #6565e7);
-  min-height: 100vh;
-  overflow-y: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: none;
-      -ms-flex-align: none;
-          align-items: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: none;
 }
 
 body {
   padding: 2rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
+  height: 100vh;
 }
 
 main {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .designs {
@@ -81,16 +56,9 @@ main {
 .main--content {
   background: white;
   padding-top: 11rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   padding-bottom: 4rem;
   border-radius: 25px;
   max-width: 372px;
@@ -98,77 +66,46 @@ main {
 }
 
 .contents {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: none;
-      -ms-flex-pack: none;
-          justify-content: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: none;
+  align-items: center;
   gap: 1.5rem;
 }
 
 h1 {
-  color: #1d1e35;
+  color: hsl(238, 29%, 16%);
   font-size: 2.5rem;
 }
 
 .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: none;
-      -ms-flex-pack: none;
-          justify-content: none;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  flex-direction: column;
+  justify-content: none;
+  align-items: stretch;
   padding: 0 2rem;
   gap: 1rem;
   position: relative;
   width: 100%;
 }
-
 .content label {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   gap: 2.5rem;
-  color: #4a4b5e;
+  color: hsl(237, 12%, 33%);
   font-weight: 400;
   font-size: 1.1rem;
 }
-
 .content .answer {
   display: none;
   max-width: 38ch;
-  -webkit-transition: all 300ms ease-in;
   transition: all 300ms ease-in;
 }
-
 .content .answer span {
   line-height: 1.5rem;
-  color: #787887;
+  color: hsl(240, 6%, 50%);
 }
 
 .content::after {
@@ -178,86 +115,53 @@ h1 {
   right: 2rem;
   bottom: -2px;
   height: 0.1rem;
-  background: #e7e7e9;
+  background: hsl(240, 5%, 91%);
 }
 
-input[type="checkbox"] {
+input[type=checkbox] {
   visibility: collapse;
 }
 
-input[type="checkbox"]:checked ~ label {
-  color: #1d1e35;
+input[type=checkbox]:checked ~ label {
+  color: hsl(238, 29%, 16%);
   font-weight: 700;
 }
 
-input[type="checkbox"]:checked ~ label img {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-  -webkit-transition: -webkit-transform 300ms ease-in-out;
-  transition: -webkit-transform 300ms ease-in-out;
+input[type=checkbox]:checked ~ label img {
+  transform: rotate(180deg);
   transition: transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
 }
 
-input[type="checkbox"]:not(:checked) ~ label img {
-  -webkit-transition: -webkit-transform 300ms ease-in-out;
-  transition: -webkit-transform 300ms ease-in-out;
+input[type=checkbox]:not(:checked) ~ label img {
   transition: transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
 }
 
-input[type="checkbox"]:checked ~ .answer {
+input[type=checkbox]:checked ~ .answer {
   display: block;
 }
 
 label:hover {
-  color: #f47c57;
+  color: hsl(14, 88%, 65%);
   cursor: pointer;
 }
 
-@media only screen and (min-width: 1440px) {
-  @-webkit-keyframes animateBox {
-    from {
-      top: 41%;
-    }
-    to {
-      top: 45%;
-      -webkit-transform: translateX(-10%);
-              transform: translateX(-10%);
-    }
-  }
+@media only screen and (min-width: 1366px) {
   @keyframes animateBox {
     from {
       top: 41%;
     }
     to {
       top: 45%;
-      -webkit-transform: translateX(-10%);
-              transform: translateX(-10%);
-    }
-  }
-  @-webkit-keyframes animateArt {
-    from {
-      -webkit-transform: translateX(0%);
-              transform: translateX(0%);
-    }
-    to {
-      -webkit-transform: translateX(10%);
-              transform: translateX(10%);
-      -webkit-transform: translateZ(-10%);
-              transform: translateZ(-10%);
+      transform: translateX(-10%);
     }
   }
   @keyframes animateArt {
     from {
-      -webkit-transform: translateX(0%);
-              transform: translateX(0%);
+      transform: translateX(0%);
     }
     to {
-      -webkit-transform: translateX(10%);
-              transform: translateX(10%);
-      -webkit-transform: translateZ(-10%);
-              transform: translateZ(-10%);
+      transform: translateX(10%);
+      transform: translateZ(-10%);
     }
   }
   .mobile-art {
@@ -266,30 +170,16 @@ label:hover {
   .mobile-pattern {
     visibility: hidden;
   }
-  body {
-    padding: 8em 130px;
-  }
   .main-container {
     position: relative;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
     width: fit-content;
     margin: 0 auto;
   }
   main {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: none;
-        -ms-flex-pack: none;
-            justify-content: none;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    justify-content: none;
+    align-items: center;
     border-radius: 20px;
     background: white;
     padding: 4rem 10rem;
@@ -300,8 +190,7 @@ label:hover {
     position: relative;
     z-index: 1;
     overflow: visible;
-    -webkit-clip-path: fill-box;
-            clip-path: fill-box;
+    clip-path: fill-box;
     overflow-clip-margin: 30px;
   }
   .designs {
@@ -341,8 +230,7 @@ label:hover {
     padding-right: 1rem;
   }
   .main--content .contents h1 {
-    -ms-flex-item-align: start;
-        align-self: flex-start;
+    align-self: flex-start;
     padding-bottom: 1rem;
   }
   .main--content .contents .content {

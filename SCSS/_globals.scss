@@ -18,6 +18,7 @@ html {
   justify-content: $just-content;
   align-items: $al-items;
 }
+
 // Text
 $veryDarkSaturatedBlue: hsl(238, 29%, 16%);
 $softRed: hsl(14, 88%, 65%);
@@ -33,7 +34,5 @@ $lightGrayishBlue: hsl(240, 5%, 91%);
 
 body {
   background: linear-gradient(to bottom, $softViolet, $softBlue);
-  min-height: 100vh;
-  overflow-y: auto;
   @include displayFlex(column, center, none);
 }
